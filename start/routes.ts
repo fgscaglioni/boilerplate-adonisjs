@@ -18,8 +18,23 @@
 |
 */
 
-import Route from '@ioc:Adonis/Core/Route'
+import Route from '@ioc:Adonis/Core/Route';
 
 Route.get('/', async () => {
   return { hello: 'world' }
 })
+
+Route.group(() => {
+  Route.post('forgot', 'AuthController.forgot');
+  Route.put('reset/:token', 'AuthController.reset');
+  Route.post('register', 'AuthController.register')
+  Route.post('login', 'AuthController.login')
+}).prefix('api')
+
+Route.group(() => {
+  Route.post('logout', 'AuthController.logout')
+  Route.get('user', 'AuthController.getUser')
+  Route.resource('users', 'UsersController').except(['create'])
+})
+  .prefix('api')
+  .middleware(['auth'])

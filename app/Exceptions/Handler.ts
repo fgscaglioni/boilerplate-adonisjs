@@ -13,11 +13,40 @@
 |
 */
 
-import Logger from '@ioc:Adonis/Core/Logger'
-import HttpExceptionHandler from '@ioc:Adonis/Core/HttpExceptionHandler'
+import { Exception } from '@adonisjs/core/build/standalone';
+import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
+import HttpExceptionHandler from '@ioc:Adonis/Core/HttpExceptionHandler';
+import Logger from '@ioc:Adonis/Core/Logger';
 
 export default class ExceptionHandler extends HttpExceptionHandler {
   constructor() {
     super(Logger)
+  }
+
+  public async handle(error: Exception, ctx: HttpContextContract) {
+
+    if (error.status === 422)
+      return ctx.response.status(error.status).send({
+        code: error.code,
+        message: error.message,
+        status: error.status,
+        errors: error['messages']?.errors ? error['messages']?.errors : ''
+      })
+
+    if (error.code === 'E_ROW_NOT_FOUND')
+      return ctx.response.status(error.status).send({
+        code: 'BAD_REQUEST',
+        message: 'resource not found',
+        status: 404,
+      })
+
+    if (['E_INVALID_AUTH_UID', 'E_INVALID_AUTH_PASSWORD'].includes(String(error.code)))
+      return ctx.response.status(error.status).send({
+        code: 'E_INVALID_AUTH',
+        message: 'invalid credentials',
+        status: 401
+      })
+
+    return super.handle(error, ctx)
   }
 }
