@@ -6,6 +6,7 @@ specifiers:
   '@adonisjs/core': ^5.7.6
   '@adonisjs/lucid': ^17.2.0
   '@adonisjs/repl': ^3.1.10
+  '@adonisjs/view': ^6.1.4
   '@japa/preset-adonis': ^1.0.15
   '@japa/runner': ^2.0.7
   '@vscode/sqlite3': ^5.0.8
@@ -16,6 +17,7 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   luxon: ^2.4.0
   mysql: ^2.18.1
+  openapi-types: ^11.0.1
   pg: ^8.7.3
   pino-pretty: ^7.6.1
   prettier: ^2.6.2
@@ -31,6 +33,7 @@ dependencies:
   '@adonisjs/core': 5.7.6
   '@adonisjs/lucid': 17.2.0_u2badnjqkivtxccqo3wcf3syla
   '@adonisjs/repl': 3.1.10_@adonisjs+core@5.7.6
+  '@adonisjs/view': 6.1.4_@adonisjs+core@5.7.6
   '@vscode/sqlite3': 5.0.8
   luxon: 2.4.0
   mysql: 2.18.1
@@ -41,13 +44,14 @@ dependencies:
 
 devDependencies:
   '@adonisjs/assembler': 5.6.2_@adonisjs+core@5.7.6
-  '@japa/preset-adonis': 1.0.15_opxr4ydqfzbwsij6wit25t7eo4
+  '@japa/preset-adonis': 1.0.15_i6jdfbwv5lmuo2bdrzagikzyhq
   '@japa/runner': 2.0.7
   adonis-preset-ts: 2.1.0
   eslint: 8.15.0
   eslint-config-prettier: 8.5.0_eslint@8.15.0
   eslint-plugin-adonis: 2.1.0_hcfsmds2fshutdssjqluwm76uu
   eslint-plugin-prettier: 4.0.0_iqftbjqlxzn3ny5nablrkczhqi
+  openapi-types: 11.0.1
   pino-pretty: 7.6.1
   prettier: 2.6.2
   typescript: 4.6.4
@@ -183,8 +187,6 @@ packages:
       memfs: 3.4.1
       serve-static: 1.15.0
       stringify-attributes: 2.0.0
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /@adonisjs/drive/2.1.1_njcqxxz66r7dcso2imnckvmc3e:
@@ -390,6 +392,17 @@ packages:
       validator: 13.7.0
     dev: false
 
+  /@adonisjs/view/6.1.4_@adonisjs+core@5.7.6:
+    resolution: {integrity: sha512-pX/st3SryIc3peC75z9oy++9wyUjh7+ETicCKS+eRB6+M0c+0Lt85ErGugWHhaxFo0CpH6ic0Mgh9iIE1tYmrA==}
+    peerDependencies:
+      '@adonisjs/core': ^5.7.0
+    dependencies:
+      '@adonisjs/core': 5.7.6
+      edge-error: 2.0.8
+      edge-supercharged: 3.1.1
+      edge.js: 5.3.5
+    dev: false
+
   /@apidevtools/json-schema-ref-parser/9.0.9:
     resolution: {integrity: sha512-GBD2Le9w2+lVFoc4vswGI/TjkNIZSVp7+9xPf+X3uidBfWnAeUWmquteSyt0+VCrhNMWj/FTABISQrD3Z/YA+w==}
     dependencies:
@@ -408,7 +421,7 @@ packages:
     resolution: {integrity: sha512-QAkD5kK2b1WfjDS/UQn/qQkbwF31uqRjPTrsCs5ZG9BQGAkjwvqGFjjPqAuzac/IYzpPtRzjCP1WrTuAIjMrXg==}
     dev: true
 
-  /@apidevtools/swagger-parser/10.0.3:
+  /@apidevtools/swagger-parser/10.0.3_openapi-types@11.0.1:
     resolution: {integrity: sha512-sNiLY51vZOmSPFZA5TF35KZ2HbgYklQnTSDnkghamzLb3EkNtcQnrBQEj5AOCxHpTtXpqMCRM1CrmV2rG6nw4g==}
     peerDependencies:
       openapi-types: '>=7'
@@ -418,6 +431,7 @@ packages:
       '@apidevtools/swagger-methods': 3.0.2
       '@jsdevtools/ono': 7.1.3
       call-me-maybe: 1.0.1
+      openapi-types: 11.0.1
       z-schema: 5.0.3
     dev: true
 
@@ -482,11 +496,11 @@ packages:
       - supports-color
     dev: true
 
-  /@japa/assert/1.3.4:
+  /@japa/assert/1.3.4_openapi-types@11.0.1:
     resolution: {integrity: sha512-MqULlh5+CBz/VvJISxsWpTalWzDmc88fpFJuLGows3vcfUqwttnJyza9So6QhKAyUgZMeyCWzThXVDth+coFWw==}
     dependencies:
       '@types/chai': 4.3.1
-      api-contract-validator: 2.2.8
+      api-contract-validator: 2.2.8_openapi-types@11.0.1
       chai: 4.3.6
       macroable: 7.0.1
     transitivePeerDependencies:
@@ -512,7 +526,7 @@ packages:
       youch-terminal: 2.1.3
     dev: true
 
-  /@japa/preset-adonis/1.0.15_opxr4ydqfzbwsij6wit25t7eo4:
+  /@japa/preset-adonis/1.0.15_i6jdfbwv5lmuo2bdrzagikzyhq:
     resolution: {integrity: sha512-/X/KwK2CElggWJiPmhAk2WlcQlbvHIStKdPCwqdazib6+PBdEj4TnkxbOHJjen5GuGUGHFaMchfIGkh9xudobg==}
     peerDependencies:
       '@adonisjs/core': ^5.0.0
@@ -520,7 +534,7 @@ packages:
     dependencies:
       '@adonisjs/core': 5.7.6
       '@japa/api-client': 1.2.0
-      '@japa/assert': 1.3.4
+      '@japa/assert': 1.3.4_openapi-types@11.0.1
       '@japa/run-failed-tests': 1.0.7
       '@japa/runner': 2.0.7
       '@japa/spec-reporter': 1.1.12
@@ -667,6 +681,10 @@ packages:
   /@poppinss/hooks/6.0.2-0:
     resolution: {integrity: sha512-mG0hnQlxgflvxyM6t/XO8z/FwotsYRXPhtLZ3cz3iyk4t8xaNtOihSANBcvqdkxZCtGBvotNIf/GnES9hvlfSQ==}
     dev: true
+
+  /@poppinss/inspect/1.0.1:
+    resolution: {integrity: sha512-kLeEaBSGhlleyYvKc7c9s3uE6xv7cwyulE0EgHf4jU/CL96h0yC4mkdw1wvC1l1PYYQozCGy46FwMBAAMOobCA==}
+    dev: false
 
   /@poppinss/manager/5.0.2:
     resolution: {integrity: sha512-c5F3EKztq/iw0J+BfNu5rSI5/ji+kjts4rJaC/VvIzpTWzbRorb7UR9J32T8cLtTwjNHbmxk3BAU402lvL2JFA==}
@@ -1121,11 +1139,11 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /api-contract-validator/2.2.8:
+  /api-contract-validator/2.2.8_openapi-types@11.0.1:
     resolution: {integrity: sha512-YM3rMcrIp8Thf/WWbVBXBGX793Mm3Phw2pn3VbJpiZkpeTCTtF10huKPrzQ2gSIaK5GjAhTRJMAOyf+rsS7MAw==}
     engines: {node: '>=8'}
     dependencies:
-      api-schema-builder: 2.0.11
+      api-schema-builder: 2.0.11_openapi-types@11.0.1
       chalk: 3.0.0
       columnify: 1.6.0
       jest-diff: 25.5.0
@@ -1138,7 +1156,7 @@ packages:
       - openapi-types
     dev: true
 
-  /api-schema-builder/2.0.11:
+  /api-schema-builder/2.0.11_openapi-types@11.0.1:
     resolution: {integrity: sha512-85zbwf8MtPWodhfnmQRW5YD/fuGR12FP+8TbcYai5wbRnoUmPYLftLSbp7NB6zQMPb61Gjz+ApPUSyTdcCos7g==}
     engines: {node: '>=8'}
     dependencies:
@@ -1149,7 +1167,7 @@ packages:
       json-schema-deref-sync: 0.14.0
       lodash.get: 4.4.2
       openapi-schema-validator: 3.0.3
-      swagger-parser: 10.0.3
+      swagger-parser: 10.0.3_openapi-types@11.0.1
     transitivePeerDependencies:
       - openapi-types
     dev: true
@@ -1239,6 +1257,11 @@ packages:
     resolution: {integrity: sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==}
     engines: {node: '>=8'}
 
+  /astring/1.8.3:
+    resolution: {integrity: sha512-sRpyiNrx2dEYIMmUXprS8nlpRg2Drs8m9ElX9vVEXaCB4XEAJhKfs7IcX0IwShjuOAjLR6wzIrgoptz1n19i1A==}
+    hasBin: true
+    dev: false
+
   /async-retry/1.3.3:
     resolution: {integrity: sha512-wfr/jstw9xNi/0teMHrRW7dsz3Lt5ARhYNZ2ewpadnhaIp5mbALhOAP+EAdsC7t4Z6wqsDVv9+W6gm1Dk9mEyw==}
     dependencies:
@@ -1314,8 +1337,6 @@ packages:
       snapdragon-node: 2.1.1
       split-string: 3.1.0
       to-regex: 3.0.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /braces/3.0.2:
@@ -1719,8 +1740,6 @@ packages:
       p-all: 2.1.0
       p-filter: 2.1.0
       p-map: 3.0.0
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /cross-spawn/7.0.3:
@@ -1753,11 +1772,6 @@ packages:
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
     dependencies:
       ms: 2.0.0
 
@@ -1906,6 +1920,46 @@ packages:
       readable-stream: 3.6.0
       stream-shift: 1.0.1
     dev: true
+
+  /edge-error/2.0.8:
+    resolution: {integrity: sha512-ORKH7rn/LEfgo0qrgoMMwFPfestNFvTO+dRLDmS+zgulhd9BVXfv/p+V6K3OyEeu2L0ysYp/71uHB31GIDe68A==}
+    dev: false
+
+  /edge-lexer/4.0.10:
+    resolution: {integrity: sha512-6hvRE0TkYyqogEGTU6GpNW3vf6PDA0U+zLEXIV4ZhsCRy2YX+FuprzitYpe69ZHC+BZdiFpdCn2Zqf1HOebqEg==}
+    dependencies:
+      edge-error: 2.0.8
+    dev: false
+
+  /edge-parser/8.0.14:
+    resolution: {integrity: sha512-N7mFw0JcozaHfHt5CJL53T8ETdAVr6aDoFa7cwjTN5qvtsYT8WyeTVO9720Rs0W8FVjliK/VZAkZ6dpxehJqFA==}
+    dependencies:
+      acorn: 8.7.1
+      astring: 1.8.3
+      edge-error: 2.0.8
+      edge-lexer: 4.0.10
+      js-stringify: 1.0.2
+    dev: false
+
+  /edge-supercharged/3.1.1:
+    resolution: {integrity: sha512-Pxgst3UeR+0PWuTIG2QHuFgFe73TMoVMphRsa/bOmIvOkQ87cD7+VxiS9ph2KbA4djJ2ChbdgtbNiIvju5yXEw==}
+    dependencies:
+      '@poppinss/utils': 3.3.1
+      slash: 3.0.0
+    dev: false
+
+  /edge.js/5.3.5:
+    resolution: {integrity: sha512-nPmd4kXtYoJC26YZ5DET0mVov63P9G3GtYsP85S061BcW1WByk2btpVwqZmIUamT5Zic5KUjsHaQOK7jSxbdPQ==}
+    dependencies:
+      '@poppinss/inspect': 1.0.1
+      '@poppinss/utils': 4.0.4
+      edge-error: 2.0.8
+      edge-lexer: 4.0.10
+      edge-parser: 8.0.14
+      js-stringify: 1.0.2
+      macroable: 7.0.1
+      stringify-attributes: 2.0.0
+    dev: false
 
   /editorconfig/0.15.3:
     resolution: {integrity: sha512-M9wIMFx96vq0R4F+gRpY3o2exzb8hEj/n9S8unZtHSvYjibBp/iMufSzvmOcV/laG0ZtuTVGtiJggPOSW2r93g==}
@@ -2172,8 +2226,6 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /extend-shallow/2.0.1:
@@ -2207,8 +2259,6 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /fast-deep-equal/3.1.3:
@@ -2228,8 +2278,6 @@ packages:
       is-glob: 4.0.3
       merge2: 1.4.1
       micromatch: 3.1.10
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /fast-glob/3.2.11:
@@ -2524,8 +2572,6 @@ packages:
       ignore: 4.0.6
       pify: 4.0.1
       slash: 2.0.0
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /graceful-fs/4.2.10:
@@ -2957,6 +3003,10 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /js-stringify/1.0.2:
+    resolution: {integrity: sha1-Fzb939lyTyijaCrcYjCufk6Weds=}
+    dev: false
+
   /js-tokens/3.0.2:
     resolution: {integrity: sha1-mGbfOVECEw449/mWvOtlRDIJwls=}
     dev: true
@@ -3321,8 +3371,6 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /micromatch/4.0.5:
@@ -3451,8 +3499,6 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /natural-compare/1.4.0:
@@ -3579,6 +3625,10 @@ packages:
 
   /openapi-types/1.3.4:
     resolution: {integrity: sha512-h8rADpW3k/wepLdERKF0VKMAPdoFYNQCLGPmc/f8sgQ2dxUy+7sY4WAX2XDUDjhKTjbJVbxxofLkzy7f1/tE4g==}
+    dev: true
+
+  /openapi-types/11.0.1:
+    resolution: {integrity: sha512-P2pGRlHFXgP8z6vrp5P/MtftOXYtlIY1A+V0VmioOoo85NN6RSPgGbEprRAUNMIsbfRjnCPdx/r8mi8QRR7grQ==}
     dev: true
 
   /optionator/0.9.1:
@@ -4259,8 +4309,6 @@ packages:
       on-finished: 2.4.1
       range-parser: 1.2.1
       statuses: 2.0.1
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /sentence-case/3.0.4:
@@ -4278,8 +4326,6 @@ packages:
       escape-html: 1.0.3
       parseurl: 1.3.3
       send: 0.18.0
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /set-cookie-parser/2.4.8:
@@ -4399,8 +4445,6 @@ packages:
       source-map: 0.5.7
       source-map-resolve: 0.5.3
       use: 3.1.1
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /sonic-boom/1.4.1:
@@ -4618,11 +4662,11 @@ packages:
     engines: {node: '>= 0.4'}
     dev: false
 
-  /swagger-parser/10.0.3:
+  /swagger-parser/10.0.3_openapi-types@11.0.1:
     resolution: {integrity: sha512-nF7oMeL4KypldrQhac8RyHerJeGPD1p2xDh900GPvc+Nk7nWP6jX2FcC7WmkinMoAmoO774+AFXcWsW8gMWEIg==}
     engines: {node: '>=10'}
     dependencies:
-      '@apidevtools/swagger-parser': 10.0.3
+      '@apidevtools/swagger-parser': 10.0.3_openapi-types@11.0.1
     transitivePeerDependencies:
       - openapi-types
     dev: true
